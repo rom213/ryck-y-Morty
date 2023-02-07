@@ -1,0 +1,180 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app{
+  display: flex;
+  flex-direction: column;
+}
+
+.fix{
+  position: relative;
+  height: 200px;
+}
+.letras{
+  position: absolute;
+  height: 120px;
+  right: 500px;
+  opacity: 0.9;
+}
+
+.cua{
+  position: fixed;
+  top: 18px;
+  left: 10px;
+  width: 300px;
+  height: 180px;
+  background-color:black;
+  border-radius: 2rem;
+  color: azure;
+  padding: 1rem;
+  opacity: 0.9;
+
+}
+.cua2,
+.cua1{
+  padding: 0.2rem;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.tar{
+  width: 300px;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: rgb(31, 23, 33);
+  color: white;
+  position: relative;
+}
+ .sec3{
+  display: grid;
+  margin: 0 350px;
+  gap: 1rem;
+  grid-template-columns: auto auto;
+  max-width: 1000px;
+ }
+ .text{
+  padding: 0 1rem ;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+ }
+
+.imag{
+  height: 240px;
+  width: 300px;
+}
+span{
+  opacity: 0.5;
+  font-size: small;
+}
+.name{
+  font-size: 1.5rem;
+}
+
+.nose,
+.cadaver,
+.Alive{
+  width: 15px;
+  height: 15px;
+  background-color: green;
+  border-radius: 50%;
+}
+
+
+.cadaver{
+  background-color: red;
+}
+.nose{
+  background-color: rgb(99, 97, 97);
+}
+.est{
+  padding: 0 0.5rem 0 0.5rem;
+  min-width: 90px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgb(31, 23, 33);
+  position:absolute;
+  top: 20px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
+.pagi{
+    width: 50px;
+    height: 50px;
+    color: antiquewhite;
+    border-radius: 50%;
+    background-color: rgb(31, 23, 33); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 200ms ease;
+}
+.pagi:hover{
+  transform: scale(1.07);
+}
+.content{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.s{
+  width: 0;
+  height: 0;
+}
+.form{
+  opacity: 0.9;
+  position:absolute;
+  top: 150px;
+  left: 350px;
+}
+.ing{
+  width: 630px;
+  height: 45px;
+  border-radius: 1rem;
+  font-size: larger;
+  cursor: pointer;
+}
+.opsi{
+  width: 630px;
+  min-height: 0px;
+  color:black;
+  font-size: 1.5rem;
+  padding: 0 1rem 1rem;
+  border-radius: 10px;
+  position: absolute;
+  background-color: white;
+  left: 350px;
+  z-index: 2000;
+  opacity: 0.9;
+  top: 194px;
+  cursor: pointer;
+}
+
+@media (min-width: 1500px) {
+    .sec3{
+      grid-template-columns: auto auto auto;
+    }
+    .ing{
+      width: 900px;
+    }
+}
+.err{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
