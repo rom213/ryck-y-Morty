@@ -150,7 +150,7 @@ useEffect(() => {
             {
             buscador?.map(bus=>{
                return  <div  id={bus.id}><ul onClick={handle} id={bus.id}>
-                <div>{bus.name}</div>
+                <div className='bus'>{bus.name}</div>
                 </ul>
                 </div>
             })
