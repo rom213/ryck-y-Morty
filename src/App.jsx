@@ -135,7 +135,7 @@ useEffect(() => {
         </div>
             <div className='form'>
             <form action="">
-              <input  onChange={handlechange} type="text" className='ing'/>
+              <input placeholder='write the name of the planet you want' onChange={handlechange} type="text" className='ing'/>
             </form>
             </div>
         <div>
