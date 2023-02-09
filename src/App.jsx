@@ -3,11 +3,12 @@ import './App.css'
 import axios from 'axios'
 import letras from './assets/imag.webp'
 import Tarjett from './Componemt/Tarjett'
+import random from './Componemt/random'
 
 
 function App() {
   const [api, setapi] = useState(0)
-  const [randomlocarion, setrandomlocarion] = useState(3)
+  const [randomlocarion, setrandomlocarion] = useState(random)
   const [paginacion, setpaginacion] = useState()
   const [first, setfirst] = useState(0)
   const [tarjetas, settarjetas] = useState()
@@ -101,7 +102,7 @@ useEffect(() => {
         if(e.target.value===''){
           setestado(true)
           setposicion(false)
-          setrandomlocarion(3)
+          setrandomlocarion(random)
         }else{
         setposicion(true)
         setopciones(e.target.value)
