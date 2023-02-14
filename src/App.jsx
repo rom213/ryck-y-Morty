@@ -17,6 +17,9 @@ function App() {
   const [opciones, setopciones] = useState()
   const [posicion, setposicion] = useState()
   const [error, seterror] = useState(false)
+  const [checked, setChecked] = useState(
+    localStorage.getItem("theme") === "dark" ? true : false
+  );
 
 
   useEffect(() => {
@@ -33,11 +36,6 @@ axios.get(url)
   .then(res=>setbuscador(res.data.results))
   .catch(err=>console.log(err))
 }, [opciones])
-
-
-
-
-
 
   useEffect(() => {
       if (api){
@@ -102,20 +100,50 @@ useEffect(() => {
         if(e.target.value===''){
           setestado(true)
           setposicion(false)
-          setrandomlocarion(random)
         }else{
         setposicion(true)
         setopciones(e.target.value)
         }
   })
+  useEffect(() => {
+    document
+      .getElementsByTagName("HTML")[0]
+      .setAttribute("data-theme", localStorage.getItem("theme"));
+  }, [checked]);
   
+  const toggleThemeChange = () => {
+    if (checked === false) {
+      localStorage.setItem("theme", "dark");
+      setChecked(true);
+    } else {
+      localStorage.setItem("theme", "light");
+      setChecked(false);
+    }
+  };
   
+
+
   return (
     <div className="App">
       <div>
       <div className='fix' style={{backgroundImage:`url('https://www.gratistodo.com/wp-content/uploads/2021/09/Fondos-de-pantalla-Rick-y-Morty-Wallpapers-gratistodo.com-1.png')`,backgroundRepeat:'no-repeat',width:'100%',backgroundPosition:'-380px center'}}>
             <img className='letras' src={letras} alt="" />
             <div className='cua'>
+              
+            <label className='dar'>
+        {
+          checked ?
+          <b>Noche</b>:
+          <b>Dia</b>
+        }
+          <input
+            type="checkbox"
+            defaultChecked={checked}
+            onChange={() => toggleThemeChange()}
+          />
+        </label>
+
+
                 <div className='cua1'>
                     <span>Nombre: </span>
                     <div>{api?.name}</div>
